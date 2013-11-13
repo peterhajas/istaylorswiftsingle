@@ -1,0 +1,124 @@
+header
+{
+    background-color: rgb(252,249,240);
+    height: 60px;
+    color: #af1946;
+    text-align: right;
+    font-weight: bold;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+header img
+{
+    height: 60px;
+    float: left;
+}
+
+footer
+{
+    background-color: #af1946;
+    width: 100%;
+    height: 40px;
+    color: rgb(252,249,240);
+    position: absolute;
+    bottom: 0;
+    font-size: 2.1em;
+}
+
+
+.credits
+{
+    text-align: left;
+}
+
+.twitter
+{
+    text-align: right;
+    background-color: orange;
+    float: right;
+}
+
+body
+{
+    margin: 0;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+a:link {color:rgb(252,249,240);}
+a:visited {color:rgb(252,249,240);}
+a:hover {color:rgb(252,249,240);}
+a:active {color:rgb(252,249,240);}
+
+#singleContainer
+{
+    text-align: center;
+    font-weight: normal;
+}
+
+.jumboText
+{
+    color: #af1946;
+    font-weight: bold;
+    font-size: 7.5em;
+    text-transform: uppercase;
+}
+
+.bigText
+{
+    font-weight: bold;
+    font-size: 7em;
+    text-transform: uppercase;
+}
+
+.medText
+{
+    font-size: 2em;
+}
+
+.teenyText
+{
+    font-size: 1.3em;
+}
+
+#statsContainer
+{
+    text-align: center;
+    font-weight: normal;
+}
+
+.statElement
+{
+    background-color: green;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    font-size: 50px;
+    margin: 10px auto;
+    border-radius: 20px;
+}
+
+.statText
+{
+    font-size:3em;
+}
+
+.vco-toolbar
+{
+    display: none;
+}
+
+.timenav-line
+{
+    display: none;
+}
+
+.timenav-indicator
+{
+    display: none;
+}
+
+.vco-slider
+{
+    display: none;
+}

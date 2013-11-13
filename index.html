@@ -1,58 +1,207 @@
 <html>
 
 <head>
+    <title>Is Taylor Swift Single?</title>
     <link rel="stylesheet" href="style.css"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="TimelineJS/compiled/js/storyjs-embed.js"></script>
 
     <script type="text/javascript">
 
     var peopleDated = [
                        {'name':"Joe Jonas",
-                        'DOB':new Date(1989,8,15),
-                        'Dated':[[new Date(2008,9,8), new Date(2008,11,24)]],
+                        'DOB':new Date(1989,7,15),
+                        'Dated':[[new Date(2008,8,8), new Date(2008,10,24)]],
                         'Sources':['http://www.people.com/people/article/0,,20230694,00.html','http://www.people.com/people/article/0,,20245498,00.html'],
                         'Songs':[]},
                        {'name':"Lucas Till",
-                        'DOB':new Date(1990,8,10),
-                        'Dated':[[new Date(2009), new Date(2009)]],
+                        'DOB':new Date(1990,7,10),
+                        'Dated':[[new Date(2009,4,5), new Date(2009,4,19)]],
                         'Sources':['http://www.businessinsider.com/timeline-of-taylor-swifts-relationships-2012-12?op=1'],
                         'Songs':[]},
                        {'name':"Taylor Lautner",
-                        'DOB':new Date(1992,2,11),
-                        'Dated':[[new Date(2009), new Date(2009,12,29)]],
-                        'Sources':['http://www.people.com/people/article/0,,20333466,00.html','http://www.usmagazine.com/celebrity-news/news/taylor-swift-taylor-lautner-split-20092912','http://www.businessinsider.com/timeline-of-taylor-swifts-relationships-2012-12?op=1'],
+                        'DOB':new Date(1992,1,11),
+                        'Dated':[[new Date(2009,7,15), new Date(2009,10,7)]],
+                        'Sources':['http://www.people.com/people/article/0,,20333466,00.html','http://www.usmagazine.com/celebrity-news/news/taylor-swift-taylor-lautner-split-20092912','http://www.businessinsider.com/timeline-of-taylor-swifts-relationships-2012-12?op=1','http://taylorswift.wikia.com/wiki/List_of_Taylor_Swift\'s_ex-boyfriends'],
                         'Songs':[]},
                        {'name':"John Mayer",
-                        'DOB':new Date(1977,10,16),
-                        'Dated':[[new Date(2010), new Date(2010,2)]],
-                        'Sources':['http://www.businessinsider.com/timeline-of-taylor-swifts-relationships-2012-12?op=1'],
+                        'DOB':new Date(1977,9,16),
+                        'Dated':[[new Date(2009,10,21), new Date(2010,1,15)]],
+                        'Sources':['http://www.businessinsider.com/timeline-of-taylor-swifts-relationships-2012-12?op=1','http://taylorswift.wikia.com/wiki/List_of_Taylor_Swift\'s_ex-boyfriends'],
                         'Songs':[]},
                        {'name':"Jake Gyllenhaal",
-                        'DOB':new Date(1980,12,19),
-                        'Dated':[[new Date(2010,10,26), new Date(2011,1,4)], [new Date(2011,1,20), new Date(???)]],
+                        'DOB':new Date(1980,11,19),
+                        'Dated':[[new Date(2010,9,26), new Date(2011,0,4)]],
                         'Sources':['http://www.usmagazine.com/celebrity-news/news/taylor-swift-jake-gyllenhaal-go-apple-picking-20102610','http://www.people.com/people/article/0,,20454920,00.html','http://www.people.com/people/article/0,,20459183,00.html','http://www.people.com/people/article/0,,20469689,00.html'],
                         'Songs':[]},
-                       {'name':"Connor Kennedy",
-                        'DOB':new Date(1994,7,25),
-                        'Dated':[[new Date(2012,7,31), new Date(2009,12,29)]],
-                        'Sources':['http://nypost.com/2012/07/31/beautiful-music-by-rfk-kid-swift/','http://www.people.com/people/article/0,,20642336,00.html'],
+                       {'name':"Conor Kennedy",
+                        'DOB':new Date(1994,6,25),
+                        'Dated':[[new Date(2012,6,31), new Date(2012,9,15)]],
+                        'Sources':['http://nypost.com/2012/07/31/beautiful-music-by-rfk-kid-swift/','http://www.people.com/people/article/0,,20642336,00.html','http://taylorswift.wikia.com/wiki/List_of_Taylor_Swift\'s_ex-boyfriends'],
                         'Songs':[]},
                        {'name':"Harry Styles",
-                        'DOB':new Date(1994,2,1),
-                        'Dated':[[new Date(2012,12,2), new Date(2013,1,8)]],
-                        'Sources':['http://popcrush.com/taylor-swift-harry-styles-one-direction-photograph/','http://www.usmagazine.com/celebrity-news/news/taylor-swift-harry-styles-break-up-what-went-wrong-201381'],
+                        'DOB':new Date(1994,1,1),
+                        'Dated':[[new Date(2012,11,2), new Date(2013,1,15)]],
+                        'Sources':['http://popcrush.com/taylor-swift-harry-styles-one-direction-photograph/','http://www.usmagazine.com/celebrity-news/news/taylor-swift-harry-styles-break-up-what-went-wrong-201381','http://taylorswift.wikia.com/wiki/List_of_Taylor_Swift\'s_ex-boyfriends'],
                         'Songs':[]}];
-    function init()
+
+    function timelineDateStringForDate(date)
     {
-        console.log(peopleDated);
+        string = "";
+        string += date.getFullYear();
+        string += ",";
+        string += date.getMonth() + 1;
+        string += ",";
+        string += date.getDate();
+
+        return string;
     }
 
-    window.onload = init;
-    window.onresize = init;
+    function averageRelationshipLength()
+    {
+        var averageRelationshipLength = 0;
+        for(var i = 0; i < peopleDated.length; i++)
+        {
+            var person = peopleDated[i];
+
+            var beginDate = person['Dated'][0][0];
+            var endDate = person['Dated'][0][1];
+
+            averageRelationshipLength += (endDate - beginDate);
+        }
+        averageRelationshipLength /= peopleDated.length;
+
+        return averageRelationshipLength;
+    }
+
+    function averageTimeBetweenRelationships()
+    {
+        var averageTimeBetweenRelationships = 0;
+        for(var i = 1; i < peopleDated.length; i++)
+        {
+            var previousPerson = peopleDated[i-1];
+            var person = peopleDated[i];
+            var startOfBetweenTime = previousPerson['Dated'][0][1];
+            var endOfBetweenTime = person['Dated'][0][0];
+
+            var span = (endOfBetweenTime - startOfBetweenTime);
+
+            averageTimeBetweenRelationships += span;
+        }
+
+        averageTimeBetweenRelationships /= (peopleDated.length-1);
+
+        return averageTimeBetweenRelationships;
+    }
+
+    function timeSinceLastRelationshipEnded()
+    {
+        var lastPersonDated = peopleDated[peopleDated.length - 1];
+
+        var endDate = lastPersonDated['Dated'][0][1];
+        var today = new Date();
+
+        return (today - endDate);
+    }
+
+    function averageAge()
+    {
+        var averageAge = 0;
+        for(var i = 0; i < peopleDated.length; i++)
+        {
+            var person = peopleDated[i];
+            var ageWhenDatingStarted = (person['Dated'][0][0] - person['DOB']);
+            ageWhenDatingStarted = ageWhenDatingStarted / 1000.0 / 60.0 / 60.0 / 24.0 / 365.25;
+
+            averageAge += ageWhenDatingStarted;
+        }
+
+        averageAge /= peopleDated.length;
+
+        return averageAge;
+    }
+
+    function millisecondsToDays(milliseconds)
+    {
+        return milliseconds / 1000.0 / 60.0 / 60.0 / 24.0;
+    }
+
+    function millisecondsToMonths(milliseconds)
+    {
+        return millisecondsToDays(milliseconds) / 30.4;
+    }
+
+    var taylorTimeline = {};
+    var taylorTimelineData = {};
+    taylorTimelineData['type'] = 'default';
+    taylorTimelineData['startDate'] = timelineDateStringForDate(peopleDated[0]['Dated'][0][0]);
+    taylorTimelineData['date'] = [];
+
+    for(var i = 0; i < peopleDated.length; i++)
+    {
+        var person = peopleDated[i];
+        personTimelineData = {};
+        personTimelineData['startDate'] = timelineDateStringForDate(person['Dated'][0][0]);
+        personTimelineData['endDate'] = timelineDateStringForDate(person['Dated'][0][1]);
+        personTimelineData['headline'] = person['name'];
+        taylorTimelineData['date'].push(personTimelineData);
+    }
+
+    taylorTimeline['timeline'] = taylorTimelineData;
+
+    $(document).ready(function() {
+        createStoryJS({
+            type:       'timeline',
+            width:      '100%',
+            height:     '30%',
+            source:     taylorTimeline,
+            embed_id:   'chart',
+            start_zoom_adjust: '0',
+            start_at_slide: '4'
+        });
+
+        var daysSinceLastRelationshipEndedElement = document.getElementById('daysSinceLastRelationshipEnded');
+
+        daysSinceLastRelationshipEnded.innerHTML = ("" + millisecondsToDays(timeSinceLastRelationshipEnded())).substring(0,3);
+
+        var averageRelationshipLengthElement = document.getElementById('avgRelLength');
+        var averageTimeBetweenRelationshipsElement = document.getElementById('avgRelInterval');
+
+        averageRelationshipLengthElement.innerHTML = ("" + millisecondsToDays(averageRelationshipLength())).substring(0,2);
+        averageTimeBetweenRelationshipsElement.innerHTML = ("" + millisecondsToMonths(averageTimeBetweenRelationships())).substring(0,3)
+
+        var averageAgeElement = document.getElementById('avgAge');
+        averageAgeElement.innerHTML = ("" + averageAge()).substring(0,4);
+    });
+
 
     </script>
 </head>
 
 <body>
+
+<header><img src='tayloreyes.png'/>Is Taylor Swift single?</header>
+<div id='chart'></div>
+
+<div id='singleContainer'>
+<div class='jumboText'>Yes.</div>
+<div><span class='medText'>Taylor Swift's last relationship ended </span>
+<span class='bigText'><span id='daysSinceLastRelationshipEnded'></span></span>
+<span class='medText'> days ago.</span>
+</div></div>
+
+<div id='statsContainer'>
+<div class='teenyText'>in case you were interested:</div>
+<div class='medText'>Her average relationship is <span id='avgRelLength' class='statText'></span> days long.</div>
+<div class='medText'>Her average time between relationships is <span id='avgRelInterval' class='statText'></span> weeks.</div>
+<div class='medText'>The average age of her companions when they start dating is <span id='avgAge' class='statText'></span> years old.</div>
+
+</div>
+
+<footer><a class='credits' href='/credits.html'>credits</a><a class='twitter' href='https://twitter.com/peterhajas'>@</a></footer>
 
 </body>
 
