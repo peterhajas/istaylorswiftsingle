@@ -108,7 +108,7 @@
     $(document).ready(function() {
         var daysSinceLastRelationshipEndedElement = document.getElementById('daysSinceLastRelationshipEnded');
 
-        daysSinceLastRelationshipEnded.innerHTML = ("" + millisecondsToDays(timeSinceLastRelationshipEnded())).substring(0,3);
+        daysSinceLastRelationshipEndedElement.innerHTML = ("" + millisecondsToDays(timeSinceLastRelationshipEnded())).substring(0,3);
 
         var relationshipCountElement = document.getElementById('relationshipCount');
 
@@ -136,31 +136,34 @@
 
 <body>
 
-<header><img src='tayloreyes.png'/><a href='index.html'> Is Taylor Swift single?</a></header>
-<div id='chart'></div>
+    <header>
+        <img src='tayloreyes.png'/>
+        <a href='index.html'> Is Taylor Swift single?</a>
+    </header>
 
-<div id='singleContainer'>
+    <div id='chart'></div>
 
-<div class='jumboText'>Yes.</div>
-<div><span class='medText'>Taylor Swift's last relationship ended </span>
-<span class='bigText'><span id='daysSinceLastRelationshipEnded'></span></span>
-<span class='medText'> days ago. She's been in <span id='relationshipCount'></span> relationships.</span>
-</div>
+    <div id='singleContainer'>
+        <div class='jumboText'>Yes.</div>
+        <div>
+            <span class='medText'>Taylor Swift's last relationship ended </span>
+            <span class='bigText' id='daysSinceLastRelationshipEnded'></span>
+            <span class='medText'> days ago. She's been in <span id='relationshipCount'></span> relationships.</span>
+        </div>
+    </div>
 
-</div>
+    <div id='statsContainer'>
+        <div id='interestedText' class='teenyText'>in case you were interested:</div>
+        <div class='medText'>Her average relationship is <span id='avgRelLength' class='statText'></span> days long. Her average time between relationships is <span id='avgRelInterval' class='statText'></span> months.</div>
+        <div class='medText'>The average age of her companions is <span id='avgAge' class='statText'></span> when they start dating.</div>
+        <div class='medText'>She's written <span id='totalSongs'></span> songs about them, averaging <span id='songsPer' class='statText'></span> each.</div>
+        <div id='dataReference' class='teenyText'>check out the <a href='data.json'>JSON data</a> yourself!</div>
+    </div>
 
-<div id='statsContainer'>
-
-<div id='interestedText' class='teenyText'>in case you were interested:</div>
-<div class='medText'>Her average relationship is <span id='avgRelLength' class='statText'></span> days long. Her average time between relationships is <span id='avgRelInterval' class='statText'></span> months.</div>
-<div class='medText'>The average age of her companions is <span id='avgAge' class='statText'></span> when they start dating.</div>
-<div class='medText'>She's written <span id='totalSongs'></span> songs about them, averaging <span id='songsPer' class='statText'></span> each.</div>
-
-<div id='dataReference' class='teenyText'>check out the <a href='data.json'>JSON data</a> yourself!</div>
-
-</div>
-
-<footer><a class='credits' href='credits.html'>credits</a><a href='http://peterhajas.com/about'class='authormark'>ph</a></footer>
+    <footer>
+        <a class='credits' href='credits.html'>credits</a>
+        <a href='http://peterhajas.com/about'class='authormark'>ph</a>
+    </footer>
 
 </body>
 
