@@ -1,6 +1,0 @@
-[submodule "rickshaw"]
-	path = rickshaw
-	url = https://github.com/shutterstock/rickshaw.git
-[submodule "TimelineJS"]
-	path = TimelineJS
-	url = https://github.com/NUKnightLab/TimelineJS.git
