@@ -7,6 +7,9 @@ header
     font-weight: bold;
     font-size: 3em;
     text-transform: uppercase;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 a:link,
@@ -26,7 +29,7 @@ footer
     width: 100%;
     height: 40px;
     color: rgb(252,249,240);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     font-size: 2.1em;
 }
@@ -35,11 +38,6 @@ footer a:link,
 footer a:visited,
 footer a:hover,
 footer a:active {color:rgb(252,249,240);}
-
-.credits
-{
-    text-align: left;
-}
 
 .twitter
 {
@@ -95,6 +93,12 @@ a:active {text-decoration:underline;}
 {
     text-align: center;
     font-weight: normal;
+    margin-bottom: 60px;
+}
+
+#interestedText
+{
+    margin-top: 40px;
 }
 
 .statElement
@@ -108,32 +112,13 @@ a:active {text-decoration:underline;}
     border-radius: 20px;
 }
 
-.credits
+.credits_text
 {
+    margin-top: 80px;
     text-align: center;
 }
 
 .statText
 {
     font-size:3em;
-}
-
-.vco-toolbar
-{
-    display: none;
-}
-
-.timenav-line
-{
-    display: none;
-}
-
-.timenav-indicator
-{
-    display: none;
-}
-
-.vco-slider
-{
-    display: none;
 }
