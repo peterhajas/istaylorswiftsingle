@@ -44,5 +44,5 @@ var peopleDated = [
                     {'name':"Calvin Harris",
                     'DOB':new Date(1984,0,17),
                     'Dated':[[new Date(2015,3,26), "now"]],
-                    'Sources':[],
+                    'Sources':['http://www.people.com/article/taylor-swift-calvin-harris-holding-hands-photo', 'http://www.usmagazine.com/celebrity-news/news/taylor-swift-dating-calvin-harris-new-romance-details-201514'],
                     'Songs':{}}];
