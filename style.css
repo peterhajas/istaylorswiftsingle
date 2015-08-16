@@ -68,7 +68,15 @@ a:active {text-decoration:underline;}
 .jumboText
 {
     color: rgb(183,60,52);
-    font-size: 7.5em;
+    font-size: 25em;
+}
+
+@media (min-width: 1000px)
+{
+    .jumboText
+    {
+        font-size: 55em;
+    }
 }
 
 .bigText
