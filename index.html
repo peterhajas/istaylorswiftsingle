@@ -19,6 +19,11 @@
             var beginDate = person['Dated'][0][0];
             var endDate = person['Dated'][0][1];
 
+            if(endDate == 'now')
+            {
+                endDate = new Date();
+            }
+
             averageRelationshipLength += (endDate - beginDate);
         }
         averageRelationshipLength /= peopleDated.length;
@@ -46,14 +51,44 @@
         return averageTimeBetweenRelationships;
     }
 
-    function timeSinceLastRelationshipEnded()
+    function lastPersonDated()
     {
-        var lastPersonDated = peopleDated[peopleDated.length - 1];
+        var lastPerson = peopleDated[peopleDated.length - 1];
+        return lastPerson;
+    }
 
-        var endDate = lastPersonDated['Dated'][0][1];
+    function isSingle()
+    {
+        var lastPerson = lastPersonDated();
+
+        var endDate = lastPerson['Dated'][0][1];
+
+        if(endDate == 'now')
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    // A change can be the beginning of a current relationship or the end of one
+    function timeSinceLastRelationshipChanged()
+    {
+        var lastPerson = lastPersonDated();
+
+        var startDate = lastPerson['Dated'][0][0];
+        var endDate = lastPerson['Dated'][0][1];
         var today = new Date();
-
-        return (today - endDate);
+        if(isSingle())
+        {
+            return (today - endDate);
+        }
+        else
+        {
+            return (today - startDate);
+        }
     }
 
     function averageAge()
@@ -105,9 +140,36 @@
     }
 
     $(document).ready(function() {
-        var daysSinceLastRelationshipEndedElement = document.getElementById('daysSinceLastRelationshipEnded');
+        var isSingleElement = document.getElementById('isSingle');
+        var isSingleInnerHTML = '';
+        if(isSingle())
+        {
+            isSingleInnerHTML = "Yes";
+        }
+        else
+        {
+            isSingleInnerHTML = "No";
+        }
+        
+        isSingleElement.innerHTML = isSingleInnerHTML;
 
-        daysSinceLastRelationshipEndedElement.innerHTML = ("" + millisecondsToDays(timeSinceLastRelationshipEnded())).substring(0,3);
+        var relationshipChangedEventElement = document.getElementById('typeOfChange');
+        var relationshipChangedEventInnerHTML = '';
+
+        if(isSingle())
+        {
+            relationshipChangedEventInnerHTML = 'Ended';
+        }
+        else
+        {
+            relationshipChangedEventInnerHTML = 'Started';
+        }
+
+        relationshipChangedEventElement.innerHTML = relationshipChangedEventInnerHTML;
+
+        var daysSinceLastRelationshipChangedElement = document.getElementById('daysSinceLastRelationshipChanged');
+
+        daysSinceLastRelationshipChangedElement.innerHTML = ("" + millisecondsToDays(timeSinceLastRelationshipChanged())).substring(0,3);
 
         var relationshipCountElement = document.getElementById('relationshipCount');
 
@@ -143,10 +205,11 @@
     <div id='chart'></div>
 
     <div id='singleContainer'>
-        <div class='jumboText'>Yes</div>
+        <div id='isSingle' class='jumboText'>Yes</div>
         <div>
-            <span class='medText'>Taylor Swift's last relationship ended </span>
-            <span class='bigText' id='daysSinceLastRelationshipEnded'></span>
+            <span class='medText'>Taylor Swift's last relationship </span>
+            <span id ='typeOfChange' class='medText'></span>
+            <span class='bigText' id='daysSinceLastRelationshipChanged'></span>
             <span class='medText'> days ago. She's been in <span id='relationshipCount'></span> relationships.</span>
         </div>
     </div>

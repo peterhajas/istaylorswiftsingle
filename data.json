@@ -39,4 +39,10 @@ var peopleDated = [
                     'DOB':new Date(1994,1,1),
                     'Dated':[[new Date(2012,11,2), new Date(2013,1,15)]],
                     'Sources':['http://popcrush.com/taylor-swift-harry-styles-one-direction-photograph/','http://www.usmagazine.com/celebrity-news/news/taylor-swift-harry-styles-break-up-what-went-wrong-201381','http://taylorswift.wikia.com/wiki/List_of_Taylor_Swift\'s_ex-boyfriends'],
-                    'Songs':{'I Knew You Were Trouble' : 'http://www.youtube.com/watch?v=vNoKguSdy4Y'}}];
+                    'Songs':{'I Knew You Were Trouble' : 'http://www.youtube.com/watch?v=vNoKguSdy4Y',
+                             'Style' : 'https://www.youtube.com/watch?v=-CmadmM5cOk'}},
+                    {'name':"Calvin Harris",
+                    'DOB':new Date(1984,0,17),
+                    'Dated':[[new Date(2015,3,26), "now"]],
+                    'Sources':[],
+                    'Songs':{}}];
