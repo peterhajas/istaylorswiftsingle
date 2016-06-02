@@ -62,7 +62,7 @@
 }, {
 	"name": "Calvin Harris",
 	"DOB": "1984-01-17T06:00:00.000Z",
-	"Dated": ["2015-04-26T05:00:00.000Z", null],
-	"Sources": ["http://www.people.com/article/taylor-swift-calvin-harris-holding-hands-photo", "http://www.usmagazine.com/celebrity-news/news/taylor-swift-dating-calvin-harris-new-romance-details-201514"],
+	"Dated": ["2015-04-26T05:00:00.000Z", "2016-06-01T06:00:00.000Z"],
+	"Sources": ["http://www.people.com/article/taylor-swift-calvin-harris-holding-hands-photo", "http://www.usmagazine.com/celebrity-news/news/taylor-swift-dating-calvin-harris-new-romance-details-201514", "http://www.people.com/people/package/article/0,,20981907_21010217,00.html"],
 	"Songs": {}
 }]
