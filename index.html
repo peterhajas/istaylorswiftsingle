@@ -178,7 +178,7 @@
 
           var daysSinceLastRelationshipChangedElement = document.getElementById('daysSinceLastRelationshipChanged');
 
-          daysSinceLastRelationshipChangedElement.innerHTML = ("" + millisecondsToDays(timeSinceLastRelationshipChanged())).substring(0,3);
+          daysSinceLastRelationshipChangedElement.innerHTML = millisecondsToDays(timeSinceLastRelationshipChanged()).toFixed(1);
 
           var relationshipCountElement = document.getElementById('relationshipCount');
 
@@ -187,17 +187,17 @@
           var averageRelationshipLengthElement = document.getElementById('avgRelLength');
           var averageTimeBetweenRelationshipsElement = document.getElementById('avgRelInterval');
 
-          averageRelationshipLengthElement.innerHTML = ("" + millisecondsToDays(averageRelationshipLength())).substring(0,2);
-          averageTimeBetweenRelationshipsElement.innerHTML = ("" + millisecondsToMonths(averageTimeBetweenRelationships())).substring(0,3)
+          averageRelationshipLengthElement.innerHTML = millisecondsToDays(averageRelationshipLength()).toFixed(0);
+          averageTimeBetweenRelationshipsElement.innerHTML = millisecondsToMonths(averageTimeBetweenRelationships()).toFixed(1);
 
           var averageAgeElement = document.getElementById('avgAge');
-          averageAgeElement.innerHTML = ("" + averageAge()).substring(0,4);
+          averageAgeElement.innerHTML = averageAge().toFixed(1);
 
           var totalSongsElement = document.getElementById('totalSongs');
           var songsPerElement = document.getElementById('songsPer');
 
           totalSongsElement.innerHTML = totalSongsWritten();
-          songsPerElement.innerHTML = ("" + averageSongsWritten()).substring(0,3);
+          songsPerElement.innerHTML = averageSongsWritten().toFixed(1);
         });
     });
 
