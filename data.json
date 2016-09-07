@@ -68,7 +68,7 @@
 }, {
     "name": "Tom Hiddleston",
     "DOB": "1981-02-09T06:00:00.000Z",
-    "Dated" : ["2016-06-15T06:00:00.000Z", null],
-    "Sources": ["https://www.thesun.co.uk/tvandshowbiz/1290205/the-steamy-pictures-that-reveal-taylor-swift-and-tom-hiddlestons-secret-romance-to-the-world/"],
+    "Dated" : ["2016-06-15T06:00:00.000Z", "2016-09-06T06:00:00.000Z"],
+    "Sources": ["https://www.thesun.co.uk/tvandshowbiz/1290205/the-steamy-pictures-that-reveal-taylor-swift-and-tom-hiddlestons-secret-romance-to-the-world/","http://www.cnn.com/2016/09/06/entertainment/taylor-swift-tom-hiddleston-break-up/index.html"],
     "Songs": {}
 }]
